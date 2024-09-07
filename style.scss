@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@mixin rowbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+
+@mixin colbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body {
+    background-color: white;
+    font-family: Arial;
+}
+
+button , h1, h2, h3, h4, h5, h6, ul, li {
+    all: unset;
+}
+
+header {
+    nav {
+        @include rowbox();
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        h1 {
+            cursor: pointer;
+            font-weight: bold;
+
+        }
+        ul {
+            li {
+                cursor: pointer;
+                margin: 0 15px;
+            }
+        }
+        .LoginNdShopContainer {
+            display: flex;
+            button {
+                img {
+                    cursor: pointer;
+                    height: 80%;
+                }
+                height: 30px;
+                margin: 0 8px;
+                cursor: pointer;
+                &:last-child {
+                    border-bottom: 1px solid ;
+                }
+            }
+        }
+       
+        &.desktop {
+    
+        }
+
+        &.mobile {
+
+        }
+    }
+}
+
+
+
+

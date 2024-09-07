@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: white;
+  font-family: Arial;
+}
+
+button, h1, h2, h3, h4, h5, h6, ul, li {
+  all: unset;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+header nav h1 {
+  cursor: pointer;
+  font-weight: bold;
+}
+header nav ul li {
+  cursor: pointer;
+  margin: 0 15px;
+}
+header nav .LoginNdShopContainer {
+  display: flex;
+}
+header nav .LoginNdShopContainer button {
+  height: 30px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+header nav .LoginNdShopContainer button img {
+  cursor: pointer;
+  height: 80%;
+}
+header nav .LoginNdShopContainer button:last-child {
+  border-bottom: 1px solid;
+}/*# sourceMappingURL=style.css.map */
