@@ -7,9 +7,10 @@
     <title>Coffe Shop</title>
 </head>
 <body>
+
     <header>
         <nav class="desktop">
-            <h1>Coffe Shop</h1>
+            <h1 class="logo">Coffe Shop</h1>
             <ul>
                 <li>Home</li>
                 <li>Shops</li>
@@ -24,9 +25,105 @@
                 <button>Log in</button>
             </div>
         </nav>
-    </header>
-    <div class="Container">
+        <nav class="mobile">
+            <h1 class="logo">Coffe Shop</h1>
+            <div class="buttonsContainer">
+                <button class="shoppingButton">
+                    <img src="./images/shopping-bag.png" alt="">
+                    
+                </button>
+                <button class="openNavButton">
+                    <img src="./images/nav.png" alt="">
+                </button>
+            </div>
+            <div class="mobileNavContainer">
+                <button class="closeNavBtn">
+                <img src="./images/close.png" alt="">
 
-    </div>
+                </button>
+
+                <ul>
+                    <li>Home</li>
+                    <li>Shops</li>
+                    <li>News</li>
+                    <li>Location</li>
+                    <li>
+                        <button>Log in</button>
+                    </li>
+                    
+                </ul>
+                   
+            </div>
+        </nav>
+    </header>
+    <main >
+
+        <div class="radialWheel">
+        
+        
+        </div>
+        <div class="beansWrapper">
+            <div class="inner">
+    
+                <img src="./images/frontface-bean.png" alt="">
+                <img src="./images/backface-bean.png" alt="">
+                <img src="./images/frontface-bean.png" alt="">
+                <img src="./images/frontface-bean.png" alt="">
+                <img src="./images/frontface-bean.png" alt="">
+                <img src="./images/frontface-bean.png" alt="">
+                <img src="./images/backface-bean.png" alt="">
+    
+            </div>
+        </div>
+       <div class="contentWrapper">
+        <div class="content">
+            <p>
+                Take a break <br />
+                and Get some coffee
+                
+            </p>
+            <p>Calm your nerves and stay active and focused on your work</p>
+            <button>
+                Shop now
+            </button>
+        </div>
+       </div>
+     
+        <div class="cupWrapper">
+            <div class="vaporContainer">
+                <div class="vapor" style="--i: 1;" ></div>
+                <div class="vapor" style="--i: 9;"></div>
+                <div class="vapor" style="--i: 15;"></div>
+                <div class="vapor" style="--i: 4;"></div>
+                <div class="vapor" style="--i: 10;"></div>
+                <div class="vapor" style="--i: 0;"></div>
+                <div class="vapor" style="--i: 2;"></div>
+                <div class="vapor" style="--i: 7;"></div>
+            </div>
+            <div class="cupContainer">
+
+                <img src="./images/CupCover.png" alt="">
+                <img src="./images/BodyCup.png" alt="">
+                
+            </div>
+            
+        </div>
+       
+    </main>
+    <img src="./images/mine.svg" class="mineSignature" alt="">
+
 </body>
+<script>
+    let openNavButton = document.querySelector('.openNavButton')
+    let closeNavBtn = document.querySelector('.closeNavBtn')
+    let mobileNavContainer = document.querySelector('.mobileNavContainer')
+
+    openNavButton.addEventListener("click" , function() {
+        mobileNavContainer.style.transform = "translateX(0%)"
+    })
+
+    closeNavBtn.addEventListener("click" , function() {
+        mobileNavContainer.style.transform = "translateX(-100%)"
+    })
+</script>
 </html>

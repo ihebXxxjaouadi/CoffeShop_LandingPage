@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,41 +8,377 @@
 body {
   background-color: white;
   font-family: Arial;
+  overflow: hidden;
+  height: 100vh;
 }
 
-button, h1, h2, h3, h4, h5, h6, ul, li {
+.mineSignature {
+  display: inline;
+  width: 150px;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  opacity: 0.5;
+}
+
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li {
   all: unset;
 }
 
+header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
 header nav {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 20px;
 }
-header nav h1 {
+header nav h1.logo {
   cursor: pointer;
   font-weight: bold;
 }
-header nav ul li {
+@media screen and (max-width: 630px) {
+  header nav.desktop {
+    display: none;
+  }
+}
+header nav.desktop ul li {
   cursor: pointer;
   margin: 0 15px;
 }
-header nav .LoginNdShopContainer {
+header nav.desktop .LoginNdShopContainer {
   display: flex;
 }
-header nav .LoginNdShopContainer button {
+header nav.desktop .LoginNdShopContainer button {
   height: 30px;
   margin: 0 8px;
   cursor: pointer;
 }
-header nav .LoginNdShopContainer button img {
+header nav.desktop .LoginNdShopContainer button img {
   cursor: pointer;
   height: 80%;
 }
-header nav .LoginNdShopContainer button:last-child {
+header nav.desktop .LoginNdShopContainer button:last-child {
   border-bottom: 1px solid;
+}
+header nav.mobile {
+  display: none;
+  position: relative;
+}
+@media screen and (max-width: 630px) {
+  header nav.mobile {
+    display: flex;
+  }
+}
+header nav.mobile .buttonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+header nav.mobile .buttonsContainer > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 0 5px;
+  height: 30px;
+}
+header nav.mobile .buttonsContainer > button img {
+  cursor: pointer;
+  height: 80%;
+}
+header nav.mobile .buttonsContainer > button.shoppingButton > img {
+  height: 22px;
+}
+header nav.mobile .mobileNavContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-100%);
+  width: 100%;
+  height: 100vh;
+  transition: 0.3s;
+  background-color: rgba(17, 17, 17, 0.1882352941);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+header nav.mobile .mobileNavContainer .closeNavBtn {
+  position: absolute;
+  top: 27px;
+  right: 27px;
+  cursor: pointer;
+}
+header nav.mobile .mobileNavContainer .closeNavBtn img {
+  width: 23px;
+}
+header nav.mobile .mobileNavContainer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-direction: column;
+  gap: 18px;
+  cursor: pointer;
+}
+header nav.mobile .mobileNavContainer ul li {
+  transition: 0.6s;
+}
+header nav.mobile .mobileNavContainer ul li:hover {
+  transform: translateX(5px);
+}
+header nav.mobile .mobileNavContainer ul li:last-of-type {
+  color: white;
+  background-color: black;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+header nav.mobile .mobileNavContainer ul li:last-of-type:hover {
+  transform: translateX(0);
+  border-radius: 30px;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+main .radialWheel {
+  transform: translateY(50px);
+  background: radial-gradient(#FFFFFF, #E7E0CB, #FFFFFF, #FFFFFF);
+  width: 40vw;
+  height: 40vw;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  animation: scaleWheel 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+@keyframes scaleWheel {
+  to {
+    width: 80vw;
+    height: 80vw;
+  }
+}
+main .contentWrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+main .contentWrapper .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  transform: translateY(20px) scale(0.9);
+  flex-direction: column;
+  margin: 0 10px;
+}
+main .contentWrapper .content p {
+  text-align: center;
+  font-family: inter;
+  transform: scale(0.6);
+  opacity: 0;
+  animation: appearingText 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+@keyframes appearingText {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+main .contentWrapper .content p:first-of-type {
+  font-size: calc(16px + 2.5vw);
+  font-weight: 400;
+}
+main .contentWrapper .content p:last-of-type {
+  margin-top: 10px;
+  color: rgba(17, 17, 17, 0.5019607843);
+}
+main .contentWrapper .content button {
+  transition: 0.5s ease-in-out;
+  background: linear-gradient(to right, #502E25, #B66A55, #502E25);
+  background-size: 200%;
+  background-position: right center;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 30px;
+  margin-top: 70px;
+  box-shadow: 0 4px 11px #764437;
+  cursor: pointer;
+  animation: appearingButton 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+  transform: translateY(100px);
+}
+main .contentWrapper .content button:hover {
+  background-position: left center;
+  box-shadow: 0 4px 11px #B66A55;
+}
+@keyframes appearingButton {
+  to {
+    transform: translateY(0);
+  }
+}
+main .cupWrapper {
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  align-items: flex-end;
+}
+main .cupWrapper .cupContainer {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .cupWrapper .cupContainer img {
+  width: 100%;
+}
+main .cupWrapper .cupContainer img:first-of-type {
+  transform: scale(0.84) translateY(20px) rotate(0);
+  animation: openCup 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+  z-index: 11;
+}
+@keyframes openCup {
+  to {
+    transform: translateY(-80px) scale(0.8) rotate(15deg);
+  }
+}
+main .cupWrapper .cupContainer img:last-of-type {
+  animation: bodyCupDown 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+@keyframes bodyCupDown {
+  to {
+    transform: translateY(180px) scale(0.95);
+  }
+}
+main .cupWrapper .vaporContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  transform: translateY(-100px);
+  animation: 1s appearVapor forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+@keyframes appearVapor {
+  to {
+    opacity: 0.7;
+  }
+}
+main .cupWrapper .vaporContainer .vapor {
+  width: 20px;
+  height: 25px;
+  background-color: rgba(136, 136, 136, 0.5019607843);
+  border-radius: 100%;
+  filter: blur(3px);
+  animation: 3s vaporGone linear infinite;
+  animation-delay: calc(var(--i) * 0.1s);
+  opacity: 0.5;
+}
+@keyframes vaporGone {
+  to {
+    transform: translateY(-300px) scaleX(10) scaleY(12);
+    opacity: 0;
+  }
+}
+main .beansWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+main .beansWrapper .inner {
+  position: relative;
+  width: 60%;
+  height: 50%;
+  transform: scale(0.6);
+  opacity: 0;
+  animation: appearBeans 1.5s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+@keyframes appearBeans {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+main .beansWrapper .inner img {
+  width: 40px;
+  position: absolute;
+}
+main .beansWrapper .inner img:first-of-type {
+  top: 0;
+  left: 100px;
+  transform: scale(0.65) rotate(-55deg);
+}
+main .beansWrapper .inner img:nth-of-type(2) {
+  top: 20%;
+  left: 0;
+}
+main .beansWrapper .inner img:nth-of-type(3) {
+  top: 60%;
+  left: 0;
+  transform: scale(0.75) rotate(-75deg) scaleX(1);
+}
+main .beansWrapper .inner img:nth-of-type(4) {
+  top: 100%;
+  left: 120px;
+  transform: scale(0.8) rotate(-15deg);
+}
+main .beansWrapper .inner img:nth-of-type(5) {
+  top: 0%;
+  right: 0px;
+  transform: scale(0.75) rotate(-75deg);
+}
+main .beansWrapper .inner img:nth-of-type(6) {
+  top: 50%;
+  right: 120px;
+  transform: scale(0.55) rotate(-105deg);
+}
+main .beansWrapper .inner img:last-of-type {
+  bottom: -50px;
+  right: 30px;
+  transform: scale(0.8) rotate(35deg);
 }/*# sourceMappingURL=style.css.map */
